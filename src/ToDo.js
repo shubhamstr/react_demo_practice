@@ -20,14 +20,28 @@ const ToDo = () => {
     return (
         <>
         <div className="container">
-        <h1>ToDo App</h1>
-            <input className="form-control" onChange={save} value={val} />
-            <button className="btn btn-info" onClick={addEl}>add</button>
-            <ol>
-                {list.map((val)=>(
-                    <li>{val}</li>
-                ))}
-            </ol>
+            <h1 className="text-center">ToDo App</h1>
+            <div className="row">
+                <div className="col-12 col-md-8 offset-md-2">
+                    <div className="form-group">
+                        <div className="input-group">
+                            <input className="form-control" onChange={save} value={val} />
+                            <div className="input-group-append">
+                                <button className="btn btn-info" onClick={addEl}>add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-12 col-md-2 offset-md-5">
+                    <div className="text-left">
+                        <ol className="mt-4 mt-md-5" style={{fontFamily: "cursive", fontSize: "20px", listStyle: "inside"}}>
+                            {list.map((val)=>(
+                                <li>{val}</li>
+                            ))}
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
         </>
     )
